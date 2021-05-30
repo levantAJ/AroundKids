@@ -1,0 +1,6 @@
+framework module TheConstraints {
+  umbrella header "TheConstraints-umbrella.h"
+
+  export *
+  module * { export * }
+}
