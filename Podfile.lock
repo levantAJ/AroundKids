@@ -1,0 +1,16 @@
+PODS:
+  - TheConstraints (1.5)
+
+DEPENDENCIES:
+  - TheConstraints
+
+SPEC REPOS:
+  trunk:
+    - TheConstraints
+
+SPEC CHECKSUMS:
+  TheConstraints: 218f13c81686296cbf794f15e44583e1eea2fe42
+
+PODFILE CHECKSUM: 259a855814387e644c34081f60529e93030cafe6
+
+COCOAPODS: 1.10.1
