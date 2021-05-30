@@ -1,0 +1,6 @@
+framework module SafetyCollection {
+  umbrella header "SafetyCollection-umbrella.h"
+
+  export *
+  module * { export * }
+}

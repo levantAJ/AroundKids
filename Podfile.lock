@@ -1,16 +1,28 @@
 PODS:
+  - DequeueKit (1.3)
+  - SafetyCollection (1.1)
+  - SideMenuSwift (2.0.7)
   - TheConstraints (1.5)
 
 DEPENDENCIES:
-  - TheConstraints
+  - DequeueKit (= 1.3)
+  - SafetyCollection (= 1.1)
+  - SideMenuSwift (= 2.0.7)
+  - TheConstraints (= 1.5)
 
 SPEC REPOS:
   trunk:
+    - DequeueKit
+    - SafetyCollection
+    - SideMenuSwift
     - TheConstraints
 
 SPEC CHECKSUMS:
+  DequeueKit: adf25e87934efb7a4722c670b0a87038efb33354
+  SafetyCollection: d09cd8ec0eb8f6844fbf7b4a6887db681195d764
+  SideMenuSwift: ffbbc88d23741932177ad1320df837cedfb3bc5e
   TheConstraints: 218f13c81686296cbf794f15e44583e1eea2fe42
 
-PODFILE CHECKSUM: 259a855814387e644c34081f60529e93030cafe6
+PODFILE CHECKSUM: f4d07e0fc0da1f8b6eb6313edfd227b4cae8a7cd
 
 COCOAPODS: 1.10.1

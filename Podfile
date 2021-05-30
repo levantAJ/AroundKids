@@ -7,6 +7,9 @@ target 'AroundKids' do
 
   # Pods for AroundKids
 
-  pod 'TheConstraints'
+  pod 'TheConstraints', '1.5'
+  pod 'SideMenuSwift', '2.0.7'
+  pod 'DequeueKit', '1.3'
+  pod 'SafetyCollection', '1.1'
 
 end

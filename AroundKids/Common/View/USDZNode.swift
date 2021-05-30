@@ -7,6 +7,7 @@
 
 import UIKit
 import SceneKit
+import QuickLook
 
 class USDZNode: SCNReferenceNode {
     let arObjectType: USDZNodeARObjectType
@@ -83,6 +84,38 @@ enum USDZNodeARObjectType: Equatable, CaseIterable {
             return "rooster-crowing"
         case .shark, .cat, .fish:
             return nil
+        }
+    }
+}
+
+// MARK: - USDZNodeARObjectTypeThumbnailGenerator
+
+final class USDZNodeARObjectTypeThumbnailGenerator {
+    func gennerate(
+        arObjectType: USDZNodeARObjectType,
+        size: CGSize,
+        completion: ((Result<UIImage, Error>) -> Void)?
+    ) {
+        let name: String = arObjectType.name
+        guard let usdzURL: URL = Bundle.main.url(forResource: name, withExtension: "usdz") else { return }
+        let scale: CGFloat = UIScreen.main.scale
+        let generator: QLThumbnailGenerator = QLThumbnailGenerator.shared
+        let request: QLThumbnailGenerator.Request = QLThumbnailGenerator.Request(
+            fileAt: usdzURL,
+            size: size,
+            scale: scale,
+            representationTypes: .all
+        )
+        generator.generateRepresentations(
+            for: request
+        ) { (thumbnail, type, error) in
+            DispatchQueue.main.async {
+                if let image: UIImage = thumbnail?.uiImage {
+                    completion?(.success(image))
+                } else if let error: Error = error {
+                    completion?(.failure(error))
+                }
+            }
         }
     }
 }
